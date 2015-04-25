@@ -19,7 +19,10 @@ class BrandsController < BaseController
   end
 
   def range
+<<<<<<< HEAD
     # render_json Brand.find_each(start: params[:index])
+=======
+>>>>>>> Week 4 solutions
     render_json Brand.with_offset(params[:index])
   end
 
