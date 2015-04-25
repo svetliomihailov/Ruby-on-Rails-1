@@ -1,0 +1,10 @@
+{
+  "product" : {
+    "name" : "Macbook Air",
+    "price":"1200.00",
+    "quantity":"10",
+    "category":"Laptops",
+    "brand":"Apple"
+  }  
+}
+
