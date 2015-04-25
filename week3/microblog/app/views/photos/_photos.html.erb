@@ -1,0 +1,21 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Image</th>
+      <th>Submission time</th>
+      <th>Create</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% photos.each do |photo| %>
+      <tr>
+      <%= render partial: 'photo', locals: { photo: photo } %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

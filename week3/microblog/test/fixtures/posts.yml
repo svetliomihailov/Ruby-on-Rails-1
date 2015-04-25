@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+post_one:
+  content: "Super cool text #mega post"
+  title: "title"
+
+post_two:
+  content: "Not so cool text.."
+  title: "more title"
