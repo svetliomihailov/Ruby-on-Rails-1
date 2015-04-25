@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+
+<%= render partial: 'posts_and_photos', locals: { shows: @showables } %>
+
+<%= link_to 'Posts', posts_path %>
+<%= link_to 'Photos', photos_path %>
