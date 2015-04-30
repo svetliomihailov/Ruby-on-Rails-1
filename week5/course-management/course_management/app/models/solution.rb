@@ -1,3 +1,5 @@
 class Solution < ActiveRecord::Base
-  validate :content, presence: true
+  belongs_to :task
+
+  validates :content, presence: true
 end

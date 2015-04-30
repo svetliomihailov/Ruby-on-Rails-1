@@ -1,0 +1,6 @@
+<p><%= notice %></p>
+<br><br>
+<%= render partial: 'lecture', locals: {lecture: @lecture} %>
+<br><br>
+<%= link_to 'Edit', edit_lecture_path(@lecture) %>
+<%= link_to 'Delete', @lecture, method: :delete, data: { confirm: 'Are you sure?' } %>

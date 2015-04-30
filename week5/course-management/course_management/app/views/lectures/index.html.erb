@@ -1,0 +1,8 @@
+<h1> Lecture list </h1>
+
+<% @lectures.each do |lecture| %>
+  <%= render partial: 'lecture', locals: {lecture: lecture} %>
+<% end %>
+
+<br>
+<p><%= link_to 'New', new_lecture_path %></p>
