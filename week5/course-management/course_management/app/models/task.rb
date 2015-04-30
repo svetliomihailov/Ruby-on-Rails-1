@@ -1,4 +1,7 @@
 class Task < ActiveRecord::Base
-  validate :name, presence: true, length: {maximum: 255}
-  validate :description, presence: true
+  belongs_to :lecture
+  has_many :solutions
+
+  validates :name, presence: true, length: {maximum: 255}
+  validates :description, presence: true
 end

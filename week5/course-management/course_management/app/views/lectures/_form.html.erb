@@ -1,0 +1,23 @@
+<%= form_for(lecture) do |f| %>
+
+  <% if lecture.errors.any? %>
+    <h2><%= pluralize(lecture.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <ul>
+      <% lecture.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <p>
+    <b>Lecture title</b><br>
+    <%= f.text_field :name %>
+  </p>
+  </p>
+    <b>Lecture body</b><br>
+    <%= f.text_area :body, size: '100x25' %>    
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
