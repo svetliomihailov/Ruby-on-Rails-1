@@ -1,0 +1,11 @@
+<h1> Lecture's tasks list </h1>
+<p>
+  <h2> Lecture </h2>
+  <%= render partial: 'lectures/lecture', locals: {lecture: @lecture } %>
+</p>
+
+<h2> Tasks </h2>
+<% @tasks.each do |task| %>
+  <%= render partial: 'task', locals: {task: task} %>
+  <%= link_to 'Task details', task_path(task) %><br><br><br>
+<% end %>
