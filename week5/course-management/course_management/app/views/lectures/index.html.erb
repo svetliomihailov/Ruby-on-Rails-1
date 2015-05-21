@@ -2,7 +2,10 @@
 
 <% @lectures.each do |lecture| %>
   <%= render partial: 'lecture', locals: {lecture: lecture} %>
+  <%= link_to 'Lecture details', lecture_path(lecture) %>
+  <%= link_to 'Lecture tasks', lecture_tasks_path(lecture) %>
+  <br><br><br>
 <% end %>
 
 <br>
-<p><%= link_to 'New', new_lecture_path %></p>
+<p><%= link_to 'New Lecture', new_lecture_path %></p>
