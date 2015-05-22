@@ -2,9 +2,8 @@ class TasksController < ApplicationController
   before_filter :set_task, only: [:edit, :show, :update, :destroy]
 
   def index
-    # @tasks = Task.all
-    @tasks = []
-    @lecture = Lecture.find params[:lecture_id]
+    set_lecture
+    @tasks = @lecture.tasks
   end
 
   def show
@@ -14,15 +13,18 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new
+    set_lecture
+    @task = @lecture.tasks.build
   end
 
-  def create 
+  def create
+    set_lecture
     @task = Task.new task_params
+    @task.lecture = @lecture
 
     respond_to do |format|
-      if @task.save task_params
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
+      if @task.save
+        format.html { redirect_to lecture_tasks_path(@lecture), notice: 'Task was successfully created.' }
       else
         format.html { render :edit }
       end
@@ -33,14 +35,14 @@ class TasksController < ApplicationController
     @task.destroy
 
     respond_to do |format|
-      format.html { redirect_to lectures_url, notice: 'Task was successfully destroied' }
+      format.html { redirect_to lecture_tasks_url(@task.lecture), notice: 'Task was successfully destroyed' }
     end
   end
 
   def update
     respond_to do |format|
       if @task.update task_params
-        format.html { redirect_to @task, notice: 'Task was successfully updated.' }
+        format.html { redirect_to lecture_tasks_path(@task.lecture), notice: 'Task was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -51,6 +53,10 @@ class TasksController < ApplicationController
 
   def set_task
     @task = Task.find params[:id]
+  end
+
+  def set_lecture
+    @lecture = Lecture.find params[:lecture_id]
   end
 
   def task_params

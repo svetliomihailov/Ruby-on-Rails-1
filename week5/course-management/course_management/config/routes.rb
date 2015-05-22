@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   resources :lectures do
-    resources :tasks
+    resources :tasks do
+      resources :solutions
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

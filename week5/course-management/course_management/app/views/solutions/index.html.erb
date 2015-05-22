@@ -1,0 +1,22 @@
+<h1> Task's solutions </h1>
+<p>
+  <h2> Lecture for the current task </h2>
+  <%= render partial: 'lectures/lecture', locals: {lecture: @lecture } %>
+</p>
+
+<p>
+  <h2> Task </h2>
+  <%= render partial: 'tasks/task', locals: {task: @task } %>
+</p>
+
+<h2> Solutions </h2>
+<% @solutions.each do |solution| %>
+  <%= render partial: 'solution', locals: {solution: solution} %>
+  <%= link_to 'Solution details', lecture_task_solution_path(@lecture, @task, solution) %><br><br><br>
+<% end %>
+
+
+<br>
+<p><%= link_to 'New Solution', new_lecture_task_solution_path(@lecture, @task) %></p>
+<p><%= link_to 'Back', lecture_tasks_path(@lecture) %></p>
+
