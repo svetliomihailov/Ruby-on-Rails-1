@@ -7,5 +7,12 @@
 <h2> Tasks </h2>
 <% @tasks.each do |task| %>
   <%= render partial: 'task', locals: {task: task} %>
-  <%= link_to 'Task details', task_path(task) %><br><br><br>
+  <%= link_to 'Task details', lecture_task_path(@lecture, task) %>
+  <%= link_to 'Task Solutions', lecture_task_solutions_path(@lecture, task) %><br><br><br>
 <% end %>
+
+
+<br>
+<p><%= link_to 'New Task', new_lecture_task_path(@lecture) %></p>
+<p><%= link_to 'Back', lectures_path %></p>
+

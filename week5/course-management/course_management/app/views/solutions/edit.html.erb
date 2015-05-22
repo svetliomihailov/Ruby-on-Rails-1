@@ -1,0 +1,2 @@
+<%= render partial: 'form', locals: {solution: @solution} %>
+<%= link_to 'Back', lecture_task_solution_path(@solution.task.lecture, @solution.task, @solution) %>

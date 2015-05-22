@@ -1,0 +1,7 @@
+<p><%= notice %></p>
+<br><br>
+<%= render partial: 'solution', locals: {solution: @solution} %>
+<br><br>
+<%= link_to 'Edit', edit_lecture_task_solution_path(@solution.task.lecture, @solution.task, @solution) %>
+<%= link_to 'Delete', lecture_task_solution_path(@solution.task.lecture, @solution.task, @solution), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', lecture_task_solutions_path(@solution.task.lecture, @solution.task) %>

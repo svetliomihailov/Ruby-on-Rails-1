@@ -1,0 +1,23 @@
+<%= form_for([task.lecture, task]) do |f| %>
+
+  <% if task.errors.any? %>
+    <h2><%= pluralize(task.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <ul>
+      <% task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <p>
+    <b>Task name</b><br>
+    <%= f.text_field :name %>
+  </p>
+  </p>
+    <b>Task description</b><br>
+    <%= f.text_area :description, size: '100x25' %> 
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
