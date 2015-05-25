@@ -1,0 +1,15 @@
+<h1>Tweets and stuff</h1>
+
+<table border="1px">
+  <tr>
+    <th>Tweet</th>
+    <th>Semantic polarity</th>
+  </tr>
+  <% @semantic_tweets.each do |st| %>
+    <tr>
+      <td><%= st[:text] %></td>
+      <td><%= st[:polarity] %></td>
+    </tr>
+  <% end %>
+</table> 
+
