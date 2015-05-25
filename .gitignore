@@ -30,3 +30,5 @@ config/secrets.yml
 *.bowerrc
 bower.json
 .ruby-version
+*.cache
+*.log
