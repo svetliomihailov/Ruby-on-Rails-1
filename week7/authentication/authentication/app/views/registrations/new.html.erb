@@ -1,0 +1,29 @@
+<h1>Registration form and stuff!</h1>
+
+<%= form_for @registration, url: registrations_path do |f| %>
+  <p>
+    <b>First name:</b><br>
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+  <p>
+    <b>Last name:</b><br>
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <b>Email:</b><br>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+  <p>
+    <b>Password:</b><br>
+    <%= f.password_field :password %>
+  </p>
+    <p>
+    <b>Confirm password:</b><br>
+    <%= f.password_field :confirm_password %>
+  </p>
+  <p>
+    <%= f.submit 'Sign up' %>
+  </p>
+<% end %>

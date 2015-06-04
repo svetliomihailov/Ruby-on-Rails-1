@@ -33,3 +33,5 @@ bower.json
 *.cache
 *.log
 *.swp
+*.sublime-project
+*.sublime-workspace
