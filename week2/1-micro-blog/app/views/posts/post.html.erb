@@ -1,0 +1,17 @@
+<h1> Post </h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Submission time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= post.content %></td>
+      <td><%= post.created_at.strftime('%F %T') %></td>
+    </tr>
+  </tbody>
+</table>
