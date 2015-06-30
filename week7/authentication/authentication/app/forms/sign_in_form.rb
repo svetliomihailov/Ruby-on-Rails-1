@@ -1,7 +1,7 @@
 class SignInForm
   include ActiveModel::Model
 
-  attr_accessor :password, :email
+  attr_accessor :password, :email, :remember_me, :user
 
   validates :email, presence: true
   validates :password, presence: true

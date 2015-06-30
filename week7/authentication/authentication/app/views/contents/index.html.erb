@@ -1,2 +1,19 @@
-<h1>You should see this if you are logged in</h1>
+<h1>User information</h1>
+<p>
+  <b>Name:</b>
+  <%= @user.first_name %>
+</p>
+<p>
+  <b>Last name:</b>
+  <%= @user.last_name %>
+</p>
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+<p>
+  <b>Registered on:</b>
+  <%= @user.registered_on %>
+</p>
+
 <%= link_to 'Logout', logout_sessions_path %>
